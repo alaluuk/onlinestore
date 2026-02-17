@@ -54,6 +54,9 @@ const customers={
     },
     delete(un, callback){
         return db.query("DELETE FROM customers WHERE username=?",[un],callback);
+    },
+    checkLogin(un, callback){
+        return db.query("SELECT password,role FROM customers WHERE username=?",[un],callback);
     }
 }
 

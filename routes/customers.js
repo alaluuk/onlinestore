@@ -3,6 +3,9 @@ const router=express.Router();
 const customers=require('../models/customers_model');
 
 router.get('/',function(request, response){
+    if(request.user.role != 'admin'){
+         return response.status(403).json("Sinulla ei ole oikeutta tähän resurssiin");
+    }
     customers.getAllCustomers(function(err,result){
         if(err){
             response.send(err);
@@ -14,6 +17,10 @@ router.get('/',function(request, response){
 });
 
 router.get('/:u',function(request, response){
+    console.log(request.user);
+    if(request.user.username != request.params.u){
+        return response.status(403).json("Sinulla ei ole oikeutta tähän resurssiin");
+    }
     customers.getOneCustomer(request.params.u,function(err,result){
         if(err){
             response.send(err);

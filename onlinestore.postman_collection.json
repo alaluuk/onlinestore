@@ -1,0 +1,283 @@
+{
+  "info": {
+    "_postman_id": "049b9136-4a42-48e1-af03-68a9ba781762",
+    "name": "onlinestore",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "13170477"
+  },
+  "item": [
+    {
+      "name": "getAllProducts",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{base_url}}/products",
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            "products"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "getOneProduct",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{base_url}}/products/4",
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            "products",
+            "4"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "addProduct",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "   {\r\n    \"name\": \"TV 65\",\r\n    \"price\": 1659.99,\r\n    \"saldo\": 120\r\n   }\r\n",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{base_url}}/products",
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            "products"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "updateProduct",
+      "request": {
+        "method": "PUT",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"name\":\"Pad\",\r\n    \"price\":225.50,\r\n    \"saldo\":25\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{base_url}}/products/4",
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            "products",
+            "4"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "deleteProduct",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"name\":\"Pad\",\r\n    \"price\":225.50,\r\n    \"saldo\":25\r\n}"
+        },
+        "url": {
+          "raw": "{{base_url}}/products/6",
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            "products",
+            "6"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "addCustomer",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"username\":\"user02\",\r\n    \"fname\":\"Liisa\",\r\n    \"lname\":\"Testi\",\r\n    \"password\":\"pass01\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{base_url}}/customers",
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            "customers"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "getAllCustomers",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{base_url}}/customers",
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            "customers"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "getOneCustomer",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "method": "GET",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"username\":\"user02\",\r\n    \"fname\":\"Liisa\",\r\n    \"lname\":\"Testi\",\r\n    \"password\":\"pass01\"\r\n}"
+        },
+        "url": {
+          "raw": "{{base_url}}/customers/user01",
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            "customers",
+            "user01"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "updateCustomer",
+      "request": {
+        "method": "GET",
+        "header": []
+      },
+      "response": []
+    },
+    {
+      "name": "updatePassword",
+      "request": {
+        "method": "PATCH",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"password\":\"pass01\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{base_url}}/customers/user01",
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            "customers",
+            "user01"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "deleteCustomer",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "{{base_url}}/customers/user05",
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            "customers",
+            "user05"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "login",
+      "request": {
+        "method": "GET",
+        "header": []
+      },
+      "response": []
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InVzZXIwMiIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzcxMzI4NDgzLCJleHAiOjE3NzEzMjk2ODN9.mU5pIZIY465wBaOZU1cwgCIQUDTqqUTukBLRprrYeVY",
+        "type": "string"
+      }
+    ]
+  },
+  "event": [
+    {
+      "listen": "prerequest",
+      "script": {
+        "type": "text/javascript",
+        "packages": {},
+        "requests": {},
+        "exec": [
+          ""
+        ]
+      }
+    },
+    {
+      "listen": "test",
+      "script": {
+        "type": "text/javascript",
+        "packages": {},
+        "requests": {},
+        "exec": [
+          ""
+        ]
+      }
+    }
+  ]
+}
