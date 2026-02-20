@@ -20,8 +20,8 @@ app.use(authenticateToken);
 app.use('/products',productsRouter);
 app.use('/customers',customersRouter);
 
-app.listen(PORT, function(){
-    console.log("Palvelin kuuntelee porttia: "+PORT);
+app.listen(process.env.PORT, function(){
+    console.log("Palvelin kuuntelee porttia: "+process.env.PORT);
 });
 
 function authenticateToken(request, response, next) {

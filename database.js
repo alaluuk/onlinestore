@@ -1,7 +1,8 @@
 const db=require('mysql2');
+const dotenv=require('dotenv');
+dotenv.config();
 
-const connectionString='mysql://storeuser:storepass@127.0.0.1/onlinestore';
+const conn=db.createPool(process.env.MYSQL_SERVER);
 
-const conn=db.createPool(connectionString);
 
 module.exports=conn;

@@ -39,3 +39,7 @@ Tässä esimerkissä .env tiedostoon tulee MY_TOKEN, jonka arvoa **jwt.sign** k�
 - Sovellus käynnistyy komennolla **node app.js**
 
 **Huom!** Jotta saat luotua customer-tauluun tunnuksia on sinun kommentoitava app.js tiedoston rivi: "app.use(authenticateToken);"
+
+## Tietokannan ER-malli
+
+<img src="er_model.png">
