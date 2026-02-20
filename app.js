@@ -4,6 +4,7 @@ const PORT=3000;
 const productsRouter=require('./routes/products');
 const customersRouter=require('./routes/customers');
 const loginRouter=require('./routes/login');
+const ordersRouter=require('./routes/orders_handler');
 const dotenv=require('dotenv');
 const jwt=require('jsonwebtoken');
 
@@ -19,6 +20,7 @@ app.use(authenticateToken);
 //suojatut reitit vaativat tokenin
 app.use('/products',productsRouter);
 app.use('/customers',customersRouter);
+app.use('/orders',ordersRouter);
 
 app.listen(process.env.PORT, function(){
     console.log("Palvelin kuuntelee porttia: "+process.env.PORT);
